@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-gradient: linear-gradient(
+    135deg,
+    #fff9e6 0%,
+    #e8f8f0 40%,
+    #e8f0ff 100%
+  );
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--bg-gradient);
+}
