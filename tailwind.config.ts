@@ -5,6 +5,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        italy: {
+          green: { DEFAULT: "#009246", dark: "#007A3A" },
+          white: { DEFAULT: "#FFFFFF" },
+          red: { DEFAULT: "#CE2B37", dark: "#B02530" },
+        },
         coral: { DEFAULT: "#FF6B6B", dark: "#E85555" },
         sunshine: { DEFAULT: "#FFD93D", dark: "#F0C419" },
         mint: { DEFAULT: "#6BCB77", dark: "#4FAF5A" },

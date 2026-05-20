@@ -21,8 +21,8 @@ export default function HomePage() {
           className="hidden w-8 shrink-0 sm:flex sm:flex-col sm:items-center sm:pt-6"
           aria-hidden
         >
-          <div className="h-4 w-4 rounded-full bg-mint shadow-md" />
-          <div className="mt-2 w-0.5 flex-1 rounded-full bg-gradient-to-b from-mint via-sky to-sunshine" />
+          <div className="h-4 w-4 rounded-full bg-italy-green shadow-md" />
+          <div className="mt-2 w-1 flex-1 rounded-full bg-gradient-to-b from-italy-green via-italy-white to-italy-red shadow-sm ring-1 ring-gray-200/80" />
         </div>
 
         <ul className="flex flex-1 flex-col gap-5">

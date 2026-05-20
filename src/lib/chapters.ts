@@ -1,29 +1,27 @@
 export type ChapterId = "OS" | "SS" | "BC";
 export type ContentType = "video" | "podcast" | "infographic" | "questions";
 
+export type ItalyFlagColor = "green" | "white" | "red";
+
 export const CHAPTERS: {
   id: ChapterId;
   title: string;
-  color: "coral" | "sky" | "sunshine";
-  accent: string;
+  color: ItalyFlagColor;
 }[] = [
   {
     id: "OS",
     title: "Organization Structure",
-    color: "coral",
-    accent: "bg-coral hover:bg-coral-dark",
+    color: "green",
   },
   {
     id: "SS",
     title: "Supply Structure",
-    color: "sky",
-    accent: "bg-sky hover:bg-sky-dark",
+    color: "white",
   },
   {
     id: "BC",
     title: "Budgeting and Costs",
-    color: "sunshine",
-    accent: "bg-sunshine hover:bg-sunshine-dark text-gray-800",
+    color: "red",
   },
 ];
 
