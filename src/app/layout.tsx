@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { DM_Sans } from "next/font/google";
+import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
 
-const nunito = Nunito({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-nunito",
-  weight: ["400", "600", "700", "800"],
+  variable: "--font-dm-sans",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -21,8 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${nunito.variable} font-sans antialiased text-gray-800`}>
-        {children}
+      <body className={`${dmSans.variable} font-sans antialiased text-ha-text`}>
+        <div className="app-shell">
+          <SiteHeader />
+          {children}
+        </div>
       </body>
     </html>
   );

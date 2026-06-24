@@ -5,19 +5,30 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        ha: {
+          bg: "#f3f1ea",
+          surface: "#fffdf9",
+          "surface-raised": "#faf8f3",
+          "surface-card": "#f7f5ef",
+          text: "#1a1a1a",
+          muted: "#5c6b63",
+          border: "#cfd9d2",
+          "border-strong": "#b8c5bc",
+          navy: "#14213d",
+          green: "#2d4636",
+          orange: "#d36b31",
+        },
         italy: {
           green: { DEFAULT: "#009246", dark: "#007A3A" },
-          white: { DEFAULT: "#FFFFFF" },
           red: { DEFAULT: "#CE2B37", dark: "#B02530" },
         },
-        coral: { DEFAULT: "#FF6B6B", dark: "#E85555" },
-        sunshine: { DEFAULT: "#FFD93D", dark: "#F0C419" },
-        mint: { DEFAULT: "#6BCB77", dark: "#4FAF5A" },
-        sky: { DEFAULT: "#4D96FF", dark: "#3A7DE0" },
-        lavender: { DEFAULT: "#C77DFF", dark: "#A85FE0" },
       },
       fontFamily: {
-        sans: ["var(--font-nunito)", "system-ui", "sans-serif"],
+        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+      },
+      boxShadow: {
+        ha: "0 10px 36px rgba(20, 33, 61, 0.11)",
+        "ha-soft": "0 2px 14px rgba(20, 33, 61, 0.07)",
       },
     },
   },

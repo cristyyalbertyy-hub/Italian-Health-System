@@ -3,9 +3,11 @@ import { notFound } from "next/navigation";
 import { readFile } from "fs/promises";
 import path from "path";
 import { BackLink } from "@/components/BackLink";
+import { ProgressLink } from "@/components/ProgressLink";
 import { Quiz } from "@/components/Quiz";
 import {
   assetPath,
+  CHAPTER_HEX,
   getChapter,
   getContentType,
   type ChapterId,
@@ -49,55 +51,59 @@ export default async function ContentPage({
   const title = `${chapter.title} — ${contentType.label}`;
 
   return (
-    <main className="mx-auto min-h-dvh max-w-4xl px-6 py-10">
-      <BackLink href={`/chapter/${chapterId}`} label={chapter.title} />
+    <main className="page-main page-main--wide">
+      <div
+        className="page-card"
+        style={{
+          background: `linear-gradient(165deg, ${CHAPTER_HEX[chapter.color]}14 0%, var(--surface) 42%)`,
+          borderColor: `${CHAPTER_HEX[chapter.color]}33`,
+        }}
+      >
+        <header className="page-header">
+          <div className="page-header__row">
+            <BackLink href={`/chapter/${chapterId}`} label={chapter.title} />
+            <ProgressLink className="progress-link--inline rounded-full border border-ha-border-strong bg-ha-surface px-3 py-1.5 shadow-ha-soft hover:border-ha-navy hover:bg-[#eef2f8] hover:no-underline" compact />
+          </div>
+          <p className="eyebrow">{contentType.label}</p>
+          <h1 className="page-header__title">{title}</h1>
+        </header>
 
-      <header className="mt-8">
-        <h1 className="text-2xl font-extrabold text-gray-800 sm:text-3xl">
-          {title}
-        </h1>
-      </header>
+        <div className="rounded-[14px] border border-ha-border-strong bg-ha-surface-card p-4 shadow-ha-soft">
+          {contentId === "video" && (
+            <video
+              className="w-full rounded-lg bg-black"
+              controls
+              playsInline
+              preload="metadata"
+              src={src}
+            >
+              Your browser does not support video playback.
+            </video>
+          )}
 
-      <div className="mt-8">
-        {contentId === "video" && (
-          <video
-            className="w-full rounded-2xl bg-black shadow-xl"
-            controls
-            playsInline
-            preload="metadata"
-            src={src}
-          >
-            Your browser does not support video playback.
-          </video>
-        )}
-
-        {contentId === "podcast" && (
-          <div className="rounded-3xl bg-white/90 p-8 shadow-xl">
-            <p className="mb-4 text-center text-4xl" aria-hidden>
-              🎧
-            </p>
+          {contentId === "podcast" && (
             <audio className="w-full" controls preload="metadata" src={src}>
               Your browser does not support audio playback.
             </audio>
-          </div>
-        )}
+          )}
 
-        {contentId === "infographic" && (
-          <div className="overflow-hidden rounded-2xl bg-white shadow-xl">
-            <Image
-              src={src}
-              alt={`${chapter.title} infographic`}
-              width={1200}
-              height={1600}
-              className="h-auto w-full"
-              priority
-            />
-          </div>
-        )}
+          {contentId === "infographic" && (
+            <div className="overflow-hidden rounded-lg bg-ha-surface">
+              <Image
+                src={src}
+                alt={`${chapter.title} infographic`}
+                width={1200}
+                height={1600}
+                className="h-auto w-full"
+                priority
+              />
+            </div>
+          )}
 
-        {contentId === "questions" && (
-          <Quiz items={await loadQuiz(chapterId)} />
-        )}
+          {contentId === "questions" && (
+            <Quiz items={await loadQuiz(chapterId)} />
+          )}
+        </div>
       </div>
     </main>
   );

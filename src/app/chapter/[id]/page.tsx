@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import { BackLink } from "@/components/BackLink";
 import { ContentTypeButton } from "@/components/ContentTypeButton";
-import { CONTENT_TYPES, getChapter } from "@/lib/chapters";
+import { ProgressLink } from "@/components/ProgressLink";
+import { CHAPTER_HEX, CONTENT_TYPES, getChapter } from "@/lib/chapters";
 import type { ChapterId } from "@/lib/chapters";
 
 const VALID_IDS = ["OS", "SS", "BC"];
@@ -21,27 +22,35 @@ export default async function ChapterPage({
   if (!chapter) notFound();
 
   return (
-    <main className="mx-auto min-h-dvh max-w-xl px-6 py-10">
-      <BackLink href="/" label="All chapters" />
+    <main className="page-main">
+      <div
+        className="page-card"
+        style={{
+          background: `linear-gradient(165deg, ${CHAPTER_HEX[chapter.color]}14 0%, var(--surface) 42%)`,
+          borderColor: `${CHAPTER_HEX[chapter.color]}33`,
+        }}
+      >
+        <header className="page-header">
+          <div className="page-header__row">
+            <BackLink href="/" label="Course overview" />
+            <ProgressLink className="progress-link--inline rounded-full border border-ha-border-strong bg-ha-surface px-3 py-1.5 shadow-ha-soft hover:border-ha-navy hover:bg-[#eef2f8] hover:no-underline" compact />
+          </div>
+          <p className="eyebrow">Chapter</p>
+          <h1 className="page-header__title">{chapter.title}</h1>
+          <p className="page-header__subtitle">How would you like to learn?</p>
+        </header>
 
-      <header className="mt-8 text-center">
-        <h1 className="text-2xl font-extrabold text-gray-800 sm:text-3xl">
-          {chapter.title}
-        </h1>
-        <p className="mt-2 text-gray-600">How would you like to learn?</p>
-      </header>
-
-      <div className="mt-10 grid gap-4">
-        {CONTENT_TYPES.map((type) => (
-          <ContentTypeButton
-            key={type.id}
-            chapterId={chapter.id as ChapterId}
-            type={type.id}
-            label={type.label}
-            icon={type.icon}
-            color={type.color}
-          />
-        ))}
+        <div className="grid gap-3">
+          {CONTENT_TYPES.map((type) => (
+            <ContentTypeButton
+              key={type.id}
+              chapterId={chapter.id as ChapterId}
+              type={type.id}
+              label={type.label}
+              color={type.color}
+            />
+          ))}
+        </div>
       </div>
     </main>
   );

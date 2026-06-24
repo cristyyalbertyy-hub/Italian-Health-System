@@ -1,31 +1,38 @@
 import { ChapterButton } from "@/components/ChapterButton";
-import { CHAPTERS } from "@/lib/chapters";
+import { ProgressLink } from "@/components/ProgressLink";
+import { CHAPTER_HEX, CHAPTERS } from "@/lib/chapters";
 
 export default function HomePage() {
   return (
-    <main className="mx-auto flex min-h-dvh max-w-2xl flex-col justify-center px-6 py-12">
-      <header className="mb-10 text-center">
-        <p className="text-4xl" aria-hidden>
-          🇮🇹
-        </p>
-        <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-gray-800 sm:text-4xl">
-          Italian Health System
-        </h1>
-        <p className="mt-2 text-gray-600">
-          Choose a chapter to start learning
-        </p>
-      </header>
-
-      <div className="flex gap-6">
-        <div
-          className="hidden w-8 shrink-0 sm:flex sm:flex-col sm:items-center sm:pt-6"
-          aria-hidden
-        >
-          <div className="h-4 w-4 rounded-full bg-italy-green shadow-md" />
-          <div className="mt-2 w-1 flex-1 rounded-full bg-gradient-to-b from-italy-green via-italy-white to-italy-red shadow-sm ring-1 ring-gray-200/80" />
+    <main className="page-main">
+      <div className="overview-panel">
+        <div className="overview-intro">
+          <p className="overview-lead">
+            Organization, supply and budgeting in the Italian health system — three
+            chapters with video, podcast, infographic and questions for each topic.
+          </p>
+          <ul className="overview-chapters" aria-label="Course chapters">
+            {CHAPTERS.map((chapter) => (
+              <li
+                key={chapter.id}
+                className="overview-chapters__item"
+                style={{ borderLeftColor: CHAPTER_HEX[chapter.color] }}
+              >
+                <strong>{chapter.title}</strong>
+                <span>{chapter.summary}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <ul className="flex flex-1 flex-col gap-5">
+        <p className="overview-hint">
+          Choose a chapter below, then pick a content format to start learning.
+        </p>
+        <p className="overview-progress">
+          Already enrolled? <ProgressLink className="progress-link--inline" />
+        </p>
+
+        <ul className="chapter-list">
           {CHAPTERS.map((chapter, i) => (
             <ChapterButton
               key={chapter.id}

@@ -1,36 +1,45 @@
 export type ChapterId = "OS" | "SS" | "BC";
 export type ContentType = "video" | "podcast" | "infographic" | "questions";
 
-export type ItalyFlagColor = "green" | "white" | "red";
+export type ChapterColor = "navy" | "green" | "orange";
 
 export const CHAPTERS: {
   id: ChapterId;
   title: string;
-  color: ItalyFlagColor;
+  color: ChapterColor;
+  summary: string;
 }[] = [
   {
     id: "OS",
     title: "Organization Structure",
-    color: "green",
+    color: "navy",
+    summary: "Governance, regions and institutional roles",
   },
   {
     id: "SS",
     title: "Supply Structure",
-    color: "white",
+    color: "green",
+    summary: "Services, workforce and delivery networks",
   },
   {
     id: "BC",
     title: "Budgeting and Costs",
-    color: "red",
+    color: "orange",
+    summary: "Financing, spending and cost control",
   },
 ];
+
+export const CHAPTER_HEX: Record<ChapterColor, string> = {
+  navy: "#14213d",
+  green: "#2d4636",
+  orange: "#d36b31",
+};
 
 export const CONTENT_TYPES: {
   id: ContentType;
   label: string;
   suffix: string;
   extension: string;
-  icon: string;
   color: string;
 }[] = [
   {
@@ -38,32 +47,28 @@ export const CONTENT_TYPES: {
     label: "Video",
     suffix: "V",
     extension: "mp4",
-    icon: "▶",
-    color: "bg-lavender hover:bg-lavender-dark",
+    color: "bg-ha-navy hover:brightness-110",
   },
   {
     id: "podcast",
     label: "Podcast",
     suffix: "P",
     extension: "m4a",
-    icon: "🎧",
-    color: "bg-mint hover:bg-mint-dark",
+    color: "bg-ha-green hover:brightness-110",
   },
   {
     id: "infographic",
     label: "Infographic",
     suffix: "I",
     extension: "png",
-    icon: "📊",
-    color: "bg-sky hover:bg-sky-dark",
+    color: "bg-ha-orange hover:brightness-110",
   },
   {
     id: "questions",
     label: "Questions",
     suffix: "Q",
     extension: "csv",
-    icon: "❓",
-    color: "bg-coral hover:bg-coral-dark",
+    color: "bg-ha-navy hover:brightness-110 ring-2 ring-ha-orange/30",
   },
 ];
 

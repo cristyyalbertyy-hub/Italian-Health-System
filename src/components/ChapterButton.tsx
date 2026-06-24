@@ -1,23 +1,22 @@
 import Link from "next/link";
-import type { ChapterId, ItalyFlagColor } from "@/lib/chapters";
+import type { ChapterId, ChapterColor } from "@/lib/chapters";
+import { CHAPTER_HEX } from "@/lib/chapters";
 
 const colorMap: Record<
-  ItalyFlagColor,
+  ChapterColor,
   { button: string; badge: string }
 > = {
+  navy: {
+    button: "bg-ha-navy text-white shadow-ha hover:brightness-110",
+    badge: "bg-ha-navy/10 text-ha-navy",
+  },
   green: {
-    button:
-      "from-italy-green to-italy-green-dark text-white shadow-italy-green/35",
-    badge: "bg-italy-green/20 text-italy-green-dark",
+    button: "bg-ha-green text-white shadow-ha hover:brightness-110",
+    badge: "bg-ha-green/10 text-ha-green",
   },
-  white: {
-    button:
-      "from-italy-white to-gray-50 text-gray-800 shadow-gray-300/50 ring-1 ring-gray-200",
-    badge: "bg-gray-100 text-gray-600",
-  },
-  red: {
-    button: "from-italy-red to-italy-red-dark text-white shadow-italy-red/35",
-    badge: "bg-italy-red/15 text-italy-red-dark",
+  orange: {
+    button: "bg-ha-orange text-white shadow-ha hover:brightness-110",
+    badge: "bg-ha-orange/10 text-ha-orange",
   },
 };
 
@@ -29,7 +28,7 @@ export function ChapterButton({
 }: {
   id: ChapterId;
   title: string;
-  color: ItalyFlagColor;
+  color: ChapterColor;
   index: number;
 }) {
   const styles = colorMap[color];
@@ -37,16 +36,20 @@ export function ChapterButton({
   return (
     <li className="relative flex items-center gap-4">
       <span
-        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lg font-bold ${styles.badge}`}
+        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold ${styles.badge}`}
         aria-hidden
       >
         {index + 1}
       </span>
       <Link
         href={`/chapter/${id}`}
-        className={`flex-1 rounded-2xl bg-gradient-to-r ${styles.button} px-6 py-5 text-lg font-bold shadow-lg transition hover:scale-[1.02] hover:shadow-xl active:scale-[0.98]`}
+        className={`flex flex-1 items-center justify-between gap-3 rounded-xl border border-ha-border-strong ${styles.button} px-5 py-4 text-base font-semibold shadow-ha-soft transition active:scale-[0.99]`}
+        style={{ borderLeftWidth: 4, borderLeftColor: CHAPTER_HEX[color] }}
       >
-        {title}
+        <span>{title}</span>
+        <span className="text-lg opacity-80" aria-hidden>
+          ›
+        </span>
       </Link>
     </li>
   );
