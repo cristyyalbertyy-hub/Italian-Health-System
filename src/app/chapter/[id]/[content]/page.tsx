@@ -66,11 +66,15 @@ export default async function ContentPage({
           <h1 className="page-header__title">{title}</h1>
         </header>
 
-        <div className="rounded-[14px] border border-ha-border-strong bg-ha-surface-card p-4 shadow-ha-soft">
+        <div
+          className="rounded-[14px] border border-ha-border-strong bg-ha-surface-card p-4 shadow-ha-soft"
+          onContextMenu={(event) => event.preventDefault()}
+        >
           {contentId === "video" && (
             <video
               className="w-full rounded-lg bg-black"
               controls
+              controlsList="nodownload"
               playsInline
               preload="metadata"
               src={src}
@@ -80,7 +84,7 @@ export default async function ContentPage({
           )}
 
           {contentId === "podcast" && (
-            <audio className="w-full" controls preload="metadata" src={src}>
+            <audio className="w-full" controls controlsList="nodownload" preload="metadata" src={src}>
               Your browser does not support audio playback.
             </audio>
           )}
