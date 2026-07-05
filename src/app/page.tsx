@@ -1,5 +1,4 @@
 import { ChapterButton } from "@/components/ChapterButton";
-import { ProgressLink } from "@/components/ProgressLink";
 import { CHAPTER_HEX, CHAPTERS } from "@/lib/chapters";
 
 export default function HomePage() {
@@ -27,9 +26,6 @@ export default function HomePage() {
 
         <p className="overview-hint">
           Choose a chapter below, then pick a content format to start learning.
-        </p>
-        <p className="overview-progress">
-          Already enrolled? <ProgressLink className="progress-link--inline" />
         </p>
 
         <ul className="chapter-list">

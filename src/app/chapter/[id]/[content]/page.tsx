@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { readFile } from "fs/promises";
 import path from "path";
 import { BackLink } from "@/components/BackLink";
-import { ProgressLink } from "@/components/ProgressLink";
 import { Quiz } from "@/components/Quiz";
 import {
   assetPath,
@@ -62,7 +61,6 @@ export default async function ContentPage({
         <header className="page-header">
           <div className="page-header__row">
             <BackLink href={`/chapter/${chapterId}`} label={chapter.title} />
-            <ProgressLink className="progress-link--inline rounded-full border border-ha-border-strong bg-ha-surface px-3 py-1.5 shadow-ha-soft hover:border-ha-navy hover:bg-[#eef2f8] hover:no-underline" compact />
           </div>
           <p className="eyebrow">{contentType.label}</p>
           <h1 className="page-header__title">{title}</h1>

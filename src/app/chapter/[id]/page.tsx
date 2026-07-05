@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { BackLink } from "@/components/BackLink";
 import { ContentTypeButton } from "@/components/ContentTypeButton";
-import { ProgressLink } from "@/components/ProgressLink";
 import { CHAPTER_HEX, CONTENT_TYPES, getChapter } from "@/lib/chapters";
 import type { ChapterId } from "@/lib/chapters";
 
@@ -33,7 +32,6 @@ export default async function ChapterPage({
         <header className="page-header">
           <div className="page-header__row">
             <BackLink href="/" label="Course overview" />
-            <ProgressLink className="progress-link--inline rounded-full border border-ha-border-strong bg-ha-surface px-3 py-1.5 shadow-ha-soft hover:border-ha-navy hover:bg-[#eef2f8] hover:no-underline" compact />
           </div>
           <p className="eyebrow">Chapter</p>
           <h1 className="page-header__title">{chapter.title}</h1>
