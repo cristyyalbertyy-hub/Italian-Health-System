@@ -14,8 +14,8 @@ Economic evaluation in healthcare is the comparative analysis of alternative act
 What is the primary role of the Italian HTA network established in 2003?,To share methods and tools for applying HTA logic to support decision-making at the hospital level.
 "From a geographical perspective, the administrative level of regional or provincial health authorities represents the _____ level.",meso
 "At the macro level, what type of technological decision-making is typically highly formalized and centralized in Europe?",Market approval or licensing.
-"In applied economics, what is the 'shadow price' of public expenditure?","The ratio $\frac{v}{k}$, representing the value of collective resource compared to private resource."
-What does a ratio of $\frac{v}{k} > 1$ imply about the fiscal reality of a health system?,Public expenditure is scarce and more valuable relative to private consumption.
+"In applied economics, what is the 'shadow price' of public expenditure?","The ratio \frac{v}{k}, representing the value of collective resource compared to private resource."
+What does a ratio of \frac{v}{k} > 1 imply about the fiscal reality of a health system?,Public expenditure is scarce and more valuable relative to private consumption.
 "In the context of cost-benefit analysis, what does 'v' represent?","The consumption value of a unit of health (e.g., a QALY)."
 "In the context of health opportunity costs, what does 'k' represent?",The health lost by others when public funds are diverted to a new technology.
 "Under a fixed budget scenario, the opportunity cost of adopting a new technology is the _____ of the existing programmes that are displaced.",net benefit
@@ -28,8 +28,8 @@ Which domain of an HTA report focuses on how material and financial resources mu
 Concept: Directly allocatable costs,"Definition: Costs of a programme that are immediately identifiable, such as physician fees, laboratory tests, and drugs."
 What is the purpose of an 'allocation basis' in hospital cost analysis?,To distribute shared overhead costs to specific departments based on a measure related to usage.
 "In hospital costing, square meters of floor space is a common allocation basis for _____ costs.",housekeeping
-What is the primary distinction between WTP for a certain health outcome ($W$) and WTP for a treatment with uncertain outcomes ($W^{*}$)?,Uncertainty on the supply side regarding treatment effectiveness.
-What is 'Willingness-to-Pay for access' ($W^{**}$)?,The value an individual places on a health programme when both future need and treatment outcomes are uncertain.
+What is the primary distinction between WTP for a certain health outcome (W) and WTP for a treatment with uncertain outcomes (W^{*})?,Uncertainty on the supply side regarding treatment effectiveness.
+What is 'Willingness-to-Pay for access' (W^{**})?,The value an individual places on a health programme when both future need and treatment outcomes are uncertain.
 "Revealed preference studies, such as wage-risk studies, infer health value by observing _____ made in other markets.",trade-offs
 What are 'humanitarian spillovers' in the context of health externalities?,The utility a person derives from the knowledge that others can access needed health services.
 "According to the Drummond model, why must market prices sometimes be adjusted for cost analysis?","Market imperfections, such as monopolies or government subsidies, cause prices to deviate from true opportunity costs."

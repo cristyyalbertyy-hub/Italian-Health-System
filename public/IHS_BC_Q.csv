@@ -9,21 +9,21 @@ Definition: Economic evaluation in health care.,The comparative analysis of alte
 What does the concept of 'opportunity cost' represent when selecting a new health technology?,The foregone advantages resulting from the non-selection of alternative options.
 Which specific tool evaluates the sustainability or economic acceptability of a health intervention based on its impact on a fixed budget?,Budget Impact Analysis (BIA).
 Under what specific condition is a cost-minimization analysis (CMA) appropriate?,When the alternative treatments are statistically demonstrated to achieve equivalent outcomes.
-"In a Cost-Effectiveness Analysis (CEA), how are health outcomes typically measured?","In physical or natural units, such as life years gained ($LYG$) or days of disability prevented."
-Concept: Cost-Utility Analysis (CUA).,A form of economic evaluation that measures health outcomes in terms of Quality-Adjusted Life Years ($QALYs$).
-The Incremental Cost-Effectiveness Ratio ($ICER$) is defined as the ratio between the difference in costs and the _____.,Difference in effectiveness between two alternatives.
-Formula: Incremental Cost-Effectiveness Ratio ($ICER$).,$ICER = \frac{Cost_A - Cost_B}{Effectiveness_A - Effectiveness_B}$
+"In a Cost-Effectiveness Analysis (CEA), how are health outcomes typically measured?","In physical or natural units, such as life years gained (LYG) or days of disability prevented."
+Concept: Cost-Utility Analysis (CUA).,A form of economic evaluation that measures health outcomes in terms of Quality-Adjusted Life Years (QALYs).
+The Incremental Cost-Effectiveness Ratio (ICER) is defined as the ratio between the difference in costs and the _____.,Difference in effectiveness between two alternatives.
+Formula: Incremental Cost-Effectiveness Ratio (ICER).,ICER = \frac{Cost_A - Cost_B}{Effectiveness_A - Effectiveness_B}
 Why must future costs in health care be discounted to present values?,Because resources could be invested elsewhere to provide a positive rate of return over time.
-"In economic evaluation, what is represented by the variable $r$?",The discount rate that reflects real rates of return.
+"In economic evaluation, what is represented by the variable r?",The discount rate that reflects real rates of return.
 How does a 'payer perspective' differ from a 'societal perspective' in cost estimation?,The payer perspective only includes costs falling on the specific budget holder's accounts.
-What are Diagnosis-Related Groups ($DRGs$) used for in hospital costing?,To provide reasonable approximations for the costs of treating different categories of patients.
+What are Diagnosis-Related Groups (DRGs) used for in hospital costing?,To provide reasonable approximations for the costs of treating different categories of patients.
 "Which costing category includes specific items like physician fees, laboratory tests, and drugs used directly for a program?",Directly allocatable costs.
 "In hospital accounting, what is the term for the measure used to distribute overhead items, such as square meters for housekeeping?",An allocation basis.
 What term refers to the range of services or products reimbursed within a publicly funded health system?,The benefit basket.
 "In a Bismarckian (Social Health Insurance) system like those seen in parts of Europe, coverage decisions define explicit _____.",Individual entitlements.
 What is a 'Pareto improvement' in the context of resource allocation?,An alternative that improves the welfare of some without reducing the welfare of anyone else.
-What does the threshold $k$ represent in health care decision rules?,"The health opportunity cost, or the rate at which the system can turn resources into health."
-"If the consumption value of health $v$ is greater than the system's threshold $k$ ($v > k$), what does this suggest about health spending?",The current budget or level of health care expenditure is likely too low.
+What does the threshold k represent in health care decision rules?,"The health opportunity cost, or the rate at which the system can turn resources into health."
+"If the consumption value of health v is greater than the system's threshold k (v > k), what does this suggest about health spending?",The current budget or level of health care expenditure is likely too low.
 "In a scenario with a fixed budget, efficiency requires replacing programs with small net benefits with programs that have _____.",Larger net benefits.
 Why is it insufficient to only have benefit data for a new program when operating under a fixed budget?,Because the opportunity cost of what existing programs will be displaced must also be known.
 Which Italian entity manages the level of reimbursement for health insurance providers (UNCAM)?,Union Nationale des Caisses d’Assurance Maladie.
@@ -36,7 +36,7 @@ Why must cost estimates be updated beyond simple inflation adjustments if recent
 "In economic evaluation, what is the 'friction cost method' used to measure?","Indirect costs of disease, specifically productivity losses."
 What is the primary rationale for including a sensitivity analysis in hospital cost estimations?,To determine how sensitive the choice between programs is to the values derived from crude allocation methods.
 "In the Italian HTA context, what is the role of the Agostino Gemelli University Hospital's Medical Directorate unit?",To support the general directorate in selecting technologies using a multidisciplinary staff.
-What distinguishes 'Cost-Benefit Analysis' ($CBA$) from 'Cost-Effectiveness Analysis' ($CEA$)?,$CBA$ values both costs and consequences in monetary units.
+What distinguishes 'Cost-Benefit Analysis' (CBA) from 'Cost-Effectiveness Analysis' (CEA)?,CBA values both costs and consequences in monetary units.
 The process of 'appraisal' in HTA differs from 'assessment' because it involves making a _____.,Policy recommendation or decision based on the evidence provided.
 Which Italian body is responsible for pricing negotiations for drugs and devices with manufacturers?,Comité Économique des Produits de Santé (CEPS).
 "In HTA, what is the 'meso level' of decision-making typically concerned with?",The organization and delivery of specific technologies at the institutional or regional level.
