@@ -4,7 +4,7 @@ export type QuizItem = { question: string; answer: string };
 export function parseQuizCsv(text: string): QuizItem[] {
   const rows: string[][] = [];
   let row: string[] = [];
-  let field = "";
+  let field = '';
   let inQuotes = false;
 
   for (let i = 0; i < text.length; i++) {
@@ -25,13 +25,13 @@ export function parseQuizCsv(text: string): QuizItem[] {
 
     if (ch === '"') {
       inQuotes = true;
-    } else if (ch === ",") {
+    } else if (ch === ',') {
       row.push(field.trim());
-      field = "";
-    } else if (ch === "\n" || (ch === "\r" && next === "\n")) {
-      if (ch === "\r") i++;
+      field = '';
+    } else if (ch === '\n' || (ch === '\r' && next === '\n')) {
+      if (ch === '\r') i++;
       row.push(field.trim());
-      field = "";
+      field = '';
       if (row.some((c) => c.length > 0)) rows.push(row);
       row = [];
     } else {
@@ -47,13 +47,4 @@ export function parseQuizCsv(text: string): QuizItem[] {
   return rows
     .filter((r) => r.length >= 2 && r[0] && r[1])
     .map(([question, answer]) => ({ question, answer }));
-}
-
-export function shuffle<T>(items: T[]): T[] {
-  const copy = [...items];
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy;
 }
