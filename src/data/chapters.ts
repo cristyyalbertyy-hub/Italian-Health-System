@@ -9,7 +9,7 @@ export type Chapter = {
 };
 
 export const courseTitle = 'Italian Health System';
-export const overviewImage = '/IHS.png';
+export const overviewImage = '/IHSA.png';
 
 export const MEDIA_OPTIONS: { type: MediaType; label: string; suffix: string; ext: string }[] = [
   { type: 'video', label: 'Video', suffix: 'V', ext: 'mp4' },
