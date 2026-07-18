@@ -1,8 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Chapter, MediaType } from '../data/chapters';
 import { mediaPath, MEDIA_OPTIONS } from '../data/chapters';
-import { useMediaProgress } from '../hooks/useMediaProgress';
-import { bindPlaybackProgress } from '../lib/playbackProgress';
 import { parseQuizCsv, type QuizItem } from '../utils/parseCsv';
 
 const TABS = MEDIA_OPTIONS.map((opt) => ({
@@ -24,25 +22,10 @@ type Props = {
 
 export default function ChapterContent({ chapter }: Props) {
   const [tab, setTab] = useState<MediaType>('video');
-  const { trackWatchComplete } = useMediaProgress(chapter.id);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     setTab('video');
   }, [chapter.id]);
-
-  useEffect(() => {
-    const el = videoRef.current;
-    if (!el || tab !== 'video') return;
-    return bindPlaybackProgress(el, () => void trackWatchComplete('V'));
-  }, [tab, chapter.id, trackWatchComplete]);
-
-  useEffect(() => {
-    const el = audioRef.current;
-    if (!el || tab !== 'podcast') return;
-    return bindPlaybackProgress(el, () => void trackWatchComplete('P'));
-  }, [tab, chapter.id, trackWatchComplete]);
 
   const option = MEDIA_OPTIONS.find((m) => m.type === tab)!;
   const src = mediaPath(chapter.prefix, option.suffix, option.ext);
@@ -76,18 +59,11 @@ export default function ChapterContent({ chapter }: Props) {
         onContextMenu={(event) => event.preventDefault()}
       >
         {tab === 'video' && (
-          <video
-            ref={videoRef}
-            className="video"
-            src={src}
-            controls
-            controlsList="nodownload"
-            playsInline
-          />
+          <video className="video" src={src} controls controlsList="nodownload" playsInline />
         )}
         {tab === 'podcast' && (
           <div className="media-block">
-            <audio ref={audioRef} className="audio" src={src} controls controlsList="nodownload" />
+            <audio className="audio" src={src} controls controlsList="nodownload" />
           </div>
         )}
         {tab === 'infographic' && (
