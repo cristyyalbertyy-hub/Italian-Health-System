@@ -9,7 +9,7 @@ export type Chapter = {
 };
 
 export const courseTitle = 'Italian Health System';
-const assetBase = import.meta.env.BASE_URL;
+const assetBase = import.meta.env.VITE_MEDIA_ORIGIN || import.meta.env.BASE_URL;
 
 export const overviewImage = `${assetBase}IHSA.png`;
 
@@ -45,5 +45,6 @@ export const CHAPTERS: Chapter[] = [
 ];
 
 export function mediaPath(prefix: string, suffix: string, ext: string): string {
-  return `${import.meta.env.BASE_URL}${prefix}_${suffix}.${ext}`;
+  const base = import.meta.env.VITE_MEDIA_ORIGIN || import.meta.env.BASE_URL;
+  return `${base}${prefix}_${suffix}.${ext}`;
 }
