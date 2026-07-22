@@ -9,7 +9,9 @@ export type Chapter = {
 };
 
 export const courseTitle = 'Italian Health System';
-export const overviewImage = '/IHSA.png';
+const assetBase = import.meta.env.BASE_URL;
+
+export const overviewImage = `${assetBase}IHSA.png`;
 
 export const MEDIA_OPTIONS: { type: MediaType; label: string; suffix: string; ext: string }[] = [
   { type: 'video', label: 'Video', suffix: 'V', ext: 'mp4' },
@@ -43,5 +45,5 @@ export const CHAPTERS: Chapter[] = [
 ];
 
 export function mediaPath(prefix: string, suffix: string, ext: string): string {
-  return `/${prefix}_${suffix}.${ext}`;
+  return `${import.meta.env.BASE_URL}${prefix}_${suffix}.${ext}`;
 }
