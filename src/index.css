@@ -229,7 +229,15 @@ code {
     position: static;
     transform: none;
     display: inline-flex;
-    margin-top: 0.65rem;
+    margin-top: 0;
+  }
+
+  .app-header__actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: none;
+    margin-top: 0;
   }
 
   .home-overview-btn {

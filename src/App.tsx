@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import ChapterContent from './components/ChapterContent';
-import { CHAPTERS, courseTitle, overviewImage } from './data/chapters';
+import { CHAPTERS, courseTitle, exitDisciplinesUrl, overviewImage } from './data/chapters';
 
 type Selection = { chapterId: string };
 
@@ -145,6 +145,11 @@ export default function App() {
           <span className="home-overview-btn__label">Course overview</span>
         </button>
         <h1>{courseTitle}</h1>
+        <div className="app-header__actions">
+          <a href={exitDisciplinesUrl} className="progress-link progress-link--header">
+            ← All disciplines
+          </a>
+        </div>
       </header>
 
       {showMobileLessonBar && mobileLessonContext ? (
